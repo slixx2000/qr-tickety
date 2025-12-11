@@ -1,0 +1,36 @@
+# ==================================================================
+# Netlify configuration for Vite + React + Supabase
+# ==================================================================
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+  # Ensure correct NODE_VERSION (prevents edge bugs)
+  environment = { NODE_VERSION = "18" }
+
+# ==================================================================
+# Redirect ALL routes to index.html (React Router compatibility)
+# ==================================================================
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# ==================================================================
+# Enable clean URLs & prevent directory listing
+# ==================================================================
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# ==================================================================
+# Optional: If using Netlify Functions later
+# ==================================================================
+#[functions]
+#  directory = "netlify/functions"
+
