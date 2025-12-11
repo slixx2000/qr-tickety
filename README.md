@@ -1,4 +1,4 @@
-# QR Ticketing - Full System (Fixed Repo)
+# QR Tickety
 
 This repo contains the full QR Ticketing app compatible with React 18 and Netlify Functions.
 
