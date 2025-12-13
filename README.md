@@ -7,6 +7,10 @@ Local dev:
 2. npm install
 3. npm install -g netlify-cli
 4. netlify dev
+   optional: run the automated script
+   1. make it executable, chmod +x auto-ngrok-vite.sh
+   2. run the file, ./auto-ngrok-vite.sh
+   3. make sure you have made a ngrok account to add your link and sign into your terminal
 
 Deployment:
 - Push to Git and connect to Netlify, set environment variables in site settings.
